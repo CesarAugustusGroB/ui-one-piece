@@ -1,0 +1,34 @@
+.cost-curve {
+  height: 60px;
+}
+
+.cost-curve-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 40px;
+  gap: 2px;
+}
+
+.cost-curve-bar-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.cost-curve-bar {
+  width: 100%;
+  min-height: 2px;
+  background: var(--accent-gold);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: height var(--transition-base);
+}
+
+.cost-curve-label {
+  font-size: 9px;
+  color: var(--text-tertiary);
+  margin-top: var(--space-1);
+  font-variant-numeric: tabular-nums;
+}

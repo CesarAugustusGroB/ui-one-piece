@@ -1,0 +1,120 @@
+.app-shell {
+  display: grid;
+  grid-template-rows: 56px 1fr;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--bg-base);
+}
+
+/* TopBar */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-4);
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.logo-icon {
+  font-size: var(--text-xl);
+  filter: drop-shadow(0 0 8px rgba(201, 169, 98, 0.4));
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--text-secondary);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Main Content - Three Column Grid */
+.main-content {
+  display: grid;
+  grid-template-columns: var(--panel-left) 1fr var(--panel-right);
+  gap: var(--space-4);
+  padding: var(--space-4);
+  overflow: hidden;
+  transition: grid-template-columns var(--transition-base), gap var(--transition-base), padding var(--transition-base);
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  overflow-y: auto;
+  transition: opacity var(--transition-base);
+}
+
+.center-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: opacity var(--transition-base);
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  overflow: hidden;
+  transition: opacity var(--transition-base);
+}
+
+/* Responsive: 2-column at lg breakpoint (hide right panel) */
+@media (max-width: 1279px) {
+  .main-content {
+    grid-template-columns: var(--panel-left-sm, 200px) 1fr;
+  }
+
+  .right-panel {
+    display: none;
+  }
+}
+
+/* Responsive: 1-column at md breakpoint */
+@media (max-width: 1023px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    padding: var(--space-2);
+    gap: var(--space-2);
+  }
+
+  .left-panel {
+    display: none;
+  }
+}
+
+/* Responsive: Mobile optimizations */
+@media (max-width: 767px) {
+  .topbar {
+    padding: 0 var(--space-2);
+  }
+
+  .logo-text {
+    display: none;
+  }
+}

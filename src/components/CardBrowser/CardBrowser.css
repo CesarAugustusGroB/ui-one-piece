@@ -1,0 +1,16 @@
+.card-browser {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card-browser-results {
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.results-count {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
